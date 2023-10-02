@@ -75,7 +75,7 @@ function List() {
                     <table>
                         <thead>
                             <tr>
-                                <td>номер</td>
+                                <td>id</td>
                                 <td>ожидание</td>
                                 <td>разработка</td>
                                 <td>выполнен</td>
