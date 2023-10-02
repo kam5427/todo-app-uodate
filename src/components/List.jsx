@@ -82,7 +82,7 @@ function List() {
                             </tr>
                         </thead>
                         {taskValueArr.map((i, index) => (
-                            (taskValueArr.length != 0) &&
+                            (taskValueArr.length !== 0) &&
                             <tbody key = {index}>
                                 <tr>
                                     <td>{index + 1}</td>
