@@ -1,25 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import { Routes, Route } from "react-router-dom";
+import Projects from "./pages/projects";
+import Anaconda from "./components/Anaconda";
+import Dragon from "./components/Dragon";
+import Header from "./components/Header";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+   return (
+         <>
+            <Header />
+             <Routes>
+                 <Route path="/projects" element={<Projects />} />
+                 <Route path="/projects/anaconda" element={<Anaconda />} />
+                 <Route path="/projects/dragon" element={<Dragon />} />
+             </Routes>
+         </>
+
+
+   )
+
+
+
 }
 
 export default App;
