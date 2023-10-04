@@ -110,7 +110,7 @@ function List() {
               <input type="file" onChange={handleInputChange} />
             </fieldset>
             <fieldset>
-              <legend>Description</legend>
+              <legend>Description:</legend>
               <input
                 type="text"
                 value={descriptionValue}
