@@ -106,11 +106,11 @@ function List() {
               />
             </fieldset>
             <fieldset>
-              <legend>Вложенные файлы</legend>
+              <legend>Attachments</legend>
               <input type="file" onChange={handleInputChange} />
             </fieldset>
             <fieldset>
-              <legend>Описание</legend>
+              <legend>Description</legend>
               <input
                 type="text"
                 value={descriptionValue}
