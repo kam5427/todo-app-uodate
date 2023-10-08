@@ -1,10 +1,16 @@
 import React from 'react'
 import List from './List'
 
-function Anaconda() {
+
+
+const Anaconda = ({ isModalOpen, taskValueArr}) => {
+
         return (
             <div>
-                <List />
+                <List
+                    isModalOpen={isModalOpen}
+                    taskValueArr={taskValueArr}
+                />
             </div>
         )
 }

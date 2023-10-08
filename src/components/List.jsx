@@ -1,58 +1,16 @@
-import React, { useState } from "react";
+import React,{ useContext } from "react";
 import Modal from "./Modal";
-import { useSelector, useDispatch } from "react-redux";
-import { addTodo, toggleTodo, deleteTodo } from "../Redux/todosSlice";
+import {Context} from "../App";
 
-function List() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const todos = useSelector((state) => state.todos);
-  const dispatch = useDispatch();
-
-  const openModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
-  const [elements, setElements] = useState([]);
-  const [inputValue, setInputValue] = useState("");
-  const [priorityValue, setPriorityValue] = useState("");
-  const [descriptionValue, setDescriptionValue] = useState("");
-  const [taskValueArr, setTaskValueArr] = useState([]);
-  const handleInputChange = (event) => {
-    setInputValue(event.target.value);
-  };
-  const handlePriorityChange = (event) => {
-    setPriorityValue(event.target.value);
-  };
-  const handleDescreptionChange = (event) => {
-    setDescriptionValue(event.target.value);
-  };
-
-  const addElement = () => {
-    if (inputValue.trim() !== "") {
-      pushValue();
-      setElements([...elements, inputValue]);
-      setInputValue("");
-      setPriorityValue("");
-      setDescriptionValue("");
-      closeModal(); // Очищаем поле ввода после добавления
-    }
-  };
-
-  const pushValue = () => {
-    const myObj = {
-      name: inputValue,
-      priority: priorityValue,
-      description: descriptionValue,
-    };
-    ++myObj.id;
-
-    setTaskValueArr([...taskValueArr, myObj]);
-    console.log(myObj);
-    console.log(taskValueArr);
-  };
+const List = ({ isModalOpen, inputValue, priorityValue, descriptionValue, taskValueArr}) => {
+  const {
+    openModal,
+    closeModal,
+    handleInputChange,
+    handlePriorityChange,
+    handleDescreptionChange,
+    addElement,
+    } = useContext(Context);
 
   return (
     <div>

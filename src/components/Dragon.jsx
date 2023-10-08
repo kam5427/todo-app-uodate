@@ -1,10 +1,13 @@
 import React from 'react'
 import List from './List'
 
-function Dragon() {
+const Dragon = ({ isModalOpen, taskValueArr}) => {
     return (
         <div>
-            <List />
+            <List
+                isModalOpen={isModalOpen}
+                taskValueArr={taskValueArr}
+            />
         </div>
     )
 }
